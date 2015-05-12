@@ -8,7 +8,13 @@
 </head>
 <body>
 
+<%flash.each do |name, msg|%>
+    <div id="page_wrapper">
+      <%= content_tag(:div,msg, class: "alert" ) %>
+    </div>
+<%end%>
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>
