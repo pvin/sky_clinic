@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sno: 
+  admission_date: 2015-05-12
+  patient_name: MyString
+  patient_address: MyString
+  patien_mobile_no: MyString
+  patien_email: MyString
+  trigger_date: 2015-05-12
+  report: MyText
+  referal_doctor: MyString
+  appointment_type: MyString
+  fees: 9.99
+  previous_sno_reference: MyString
+
+two:
+  sno: 
+  admission_date: 2015-05-12
+  patient_name: MyString
+  patient_address: MyString
+  patien_mobile_no: MyString
+  patien_email: MyString
+  trigger_date: 2015-05-12
+  report: MyText
+  referal_doctor: MyString
+  appointment_type: MyString
+  fees: 9.99
+  previous_sno_reference: MyString

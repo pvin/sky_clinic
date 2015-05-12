@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512112522) do
+ActiveRecord::Schema.define(version: 20150512140725) do
+
+  create_table "patients", force: true do |t|
+    t.date     "admission_date"
+    t.string   "patient_name"
+    t.string   "patient_address"
+    t.string   "patien_mobile_no"
+    t.string   "patien_email"
+    t.date     "trigger_date"
+    t.text     "report"
+    t.string   "referal_doctor"
+    t.string   "appointment_type"
+    t.decimal  "fees",                   precision: 10, scale: 0
+    t.string   "previous_sno_reference"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

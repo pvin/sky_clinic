@@ -1,0 +1,62 @@
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :admission_date %><br>
+    <%= f.date_select :admission_date %>
+  </div>
+  <div class="field">
+    <%= f.label :patient_name %><br>
+    <%= f.text_field :patient_name %>
+  </div>
+  <div class="field">
+    <%= f.label :patient_address %><br>
+    <%= f.text_field :patient_address %>
+  </div>
+  <div class="field">
+    <%= f.label :patien_mobile_no %><br>
+    <%= f.text_field :patien_mobile_no %>
+  </div>
+  <div class="field">
+    <%= f.label :patien_email %><br>
+    <%= f.text_field :patien_email %>
+  </div>
+  <div class="field">
+    <%= f.label :trigger_date %><br>
+    <%= f.date_select :trigger_date %>
+  </div>
+  <div class="field">
+    <%= f.label :report %><br>
+    <%= f.text_area :report %>
+  </div>
+  <div class="field">
+    <%= f.label :referal_doctor %><br>
+    <%= f.text_field :referal_doctor %>
+  </div>
+  <div class="field">
+    <%= f.label :appointment_type %><br>
+    <%= f.text_field :appointment_type %>
+  </div>
+  <div class="field">
+    <%= f.label :fees %><br>
+    <%= f.text_field :fees %>
+  </div>
+  <div class="field">
+    <%= f.label :previous_sno_reference %><br>
+    <%= f.text_field :previous_sno_reference %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

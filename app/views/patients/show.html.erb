@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Admission date:</strong>
+  <%= @patient.admission_date %>
+</p>
+
+<p>
+  <strong>Patient name:</strong>
+  <%= @patient.patient_name %>
+</p>
+
+<p>
+  <strong>Patient address:</strong>
+  <%= @patient.patient_address %>
+</p>
+
+<p>
+  <strong>Patien mobile no:</strong>
+  <%= @patient.patien_mobile_no %>
+</p>
+
+<p>
+  <strong>Patien email:</strong>
+  <%= @patient.patien_email %>
+</p>
+
+<p>
+  <strong>Trigger date:</strong>
+  <%= @patient.trigger_date %>
+</p>
+
+<p>
+  <strong>Report:</strong>
+  <%= @patient.report %>
+</p>
+
+<p>
+  <strong>Referal doctor:</strong>
+  <%= @patient.referal_doctor %>
+</p>
+
+<p>
+  <strong>Appointment type:</strong>
+  <%= @patient.appointment_type %>
+</p>
+
+<p>
+  <strong>Fees:</strong>
+  <%= @patient.fees %>
+</p>
+
+<p>
+  <strong>Previous sno reference:</strong>
+  <%= @patient.previous_sno_reference %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
