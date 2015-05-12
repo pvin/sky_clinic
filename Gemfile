@@ -40,3 +40,6 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'devise'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'progress_bar'
