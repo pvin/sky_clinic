@@ -10,6 +10,9 @@ class Patient < ActiveRecord::Base
   searchable do
     text :patient_name,:default_boost => 2
   end
+
+
+
 end
 
 
