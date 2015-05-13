@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  #before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
@@ -34,12 +34,6 @@ class PatientsController < ApplicationController
   def destroy
     @patient.destroy
     respond_with(@patient)
-  end
-
-  def search
-    @search = Patient.search() do
-      keywords('dzs')
-    end
   end
 
   private

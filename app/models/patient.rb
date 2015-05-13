@@ -8,6 +8,8 @@ class Patient < ActiveRecord::Base
   validates :patien_email, :presence => true
 
   searchable do
-    text :patient_name, :default_boost => 2
+    text :patient_name,:default_boost => 2
   end
 end
+
+

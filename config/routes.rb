@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
+
+  root 'home#home_page'
+  get 'home/home_page' => 'home#home_page'
+  post 'home/search' => 'home#search'
+  get 'home/todays_list' => 'home#todays_list'
   resources :patients
 
   devise_for :users
+  get "*path" => redirect("/")
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'patients#search'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
