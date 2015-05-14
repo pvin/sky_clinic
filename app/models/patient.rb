@@ -6,6 +6,9 @@ class Patient < ActiveRecord::Base
   validates :appointment_type, :presence => true
   validates :fees, :presence => true
   validates :patien_email, :presence => true
+  mount_uploader :attachment, AttachmentUploader
+  mount_uploader :attachment1, Attachment1Uploader
+
 
   searchable do
     text :patient_name,:default_boost => 2

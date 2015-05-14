@@ -11,6 +11,8 @@
       <th>Patien email</th>
       <th>Trigger date</th>
       <th>Report</th>
+      <th>Attachment one</th>
+      <th>Attachment two</th>
       <th>Referal doctor</th>
       <th>Appointment type</th>
       <th>Fees</th>
@@ -29,7 +31,20 @@
         <td><%= patient.patien_mobile_no %></td>
         <td><%= patient.patien_email %></td>
         <td><%= patient.trigger_date %></td>
-        <td><%= patient.report %></td>
+        <td><%= truncate("#{patient.report}", length: 10) %></td>
+
+        <% if patient.attachment.present? %>
+            <td><%= link_to "Download File", patient.attachment_url %> </td>
+        <%else%>
+            <td> - </td>
+        <%end%>
+
+        <% if patient.attachment.present? %>
+            <td><%= link_to "Download File", patient.attachment1_url %></td>
+        <%else%>
+            <td> - </td>
+        <%end%>
+
         <td><%= patient.referal_doctor %></td>
         <td><%= patient.appointment_type %></td>
         <td><%= patient.fees %></td>
