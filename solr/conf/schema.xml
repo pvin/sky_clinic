@@ -65,8 +65,8 @@
         <filter class="solr.StandardFilterFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.PorterStemFilterFactory"/>
-        <filter class="solr.EdgeNGramFilterFactory" minGramSize="3" maxGramSize="20" side="front"/>
-        <filter class="solr.EdgeNGramFilterFactory" minGramSize="3" maxGramSize="20" side="back"/>
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="20" side="front"/>
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="20" side="back"/>
       </analyzer>
     </fieldType>
     <!-- *** This fieldType is used by Sunspot! *** -->
