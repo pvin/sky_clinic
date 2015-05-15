@@ -1,80 +1,113 @@
+<h3><%= @patient.patient_name %> Information</h3>
+<div id="page_wrapper">
 <p id="notice"><%= notice %></p>
 
-<p>
+<pre>
+  <p>
   <strong>Admission date:</strong>
   <%= @patient.admission_date %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Patient name:</strong>
   <%= @patient.patient_name %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Patient address:</strong>
   <%= @patient.patient_address %>
 </p>
+</pre>
 
-<p>
+  <pre>
+  <p>
   <strong>Patien mobile no:</strong>
   <%= @patient.patien_mobile_no %>
 </p>
+</pre>
 
+  <pre>
 <p>
   <strong>Patien email:</strong>
   <%= @patient.patien_email %>
 </p>
+</pre>
 
+  <pre>
 <p>
   <strong>Trigger date:</strong>
   <%= @patient.trigger_date %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Report:</strong>
   <%= @patient.report %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Attachment1:</strong>
   <%= link_to "Download Resume", @patient.attachment_url %></td>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Attachment2:</strong>
   <%= link_to "Download Resume", @patient.attachment1_url %></td>
 </p>
+</pre>
 
-
+  <pre>
 <p>
   <strong>Referal doctor:</strong>
   <%= @patient.referal_doctor %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Appointment type:</strong>
   <%= @patient.appointment_type %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Fees:</strong>
   <%= @patient.fees %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Previous sno reference:</strong>
   <%= @patient.previous_sno_reference %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Accessories List:</strong>
   <%= @patient.accessories_list %>
 </p>
+</pre>
 
+<pre>
 <p>
   <strong>Accessories Price:</strong>
   <%= @patient.accessories_price %>
 </p>
+</pre>
+
 
 <%= link_to 'Edit', edit_patient_path(@patient), class: "btn btn-warning" %> |
 <%= link_to 'Back', patients_path, class: "btn btn-info" %>
+</div>

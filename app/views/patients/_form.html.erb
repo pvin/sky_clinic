@@ -1,3 +1,5 @@
+
+<div id="page_wrapper">
 <%= form_for(@patient) do |f| %>
   <% if @patient.errors.any? %>
     <div id="error_explanation">
@@ -16,10 +18,13 @@
     <%= f.label :admission_date %><br>
     <%= f.date_select :admission_date %>
   </div>
-  <div class="field">
+
+  <div class="field" >
     <%= f.label :patient_name %><br>
-    <%= f.text_field :patient_name %>
+    <%= f.text_field :patient_name%>
   </div>
+
+
   <div class="field">
     <%= f.label :patient_address %><br>
     <%= f.text_field :patient_address %>
@@ -32,6 +37,7 @@
     <%= f.label :patien_email %><br>
     <%= f.text_field :patien_email %>
   </div>
+
   <div class="field">
     <%= f.label :trigger_date %><br>
     <%= f.date_select :trigger_date %>
@@ -76,6 +82,7 @@
       <%= f.text_field :accessories_price %>
     </div>
   <div class="actions">
-    <%= f.submit "Save", class: "btn btn-primary"%>
+    <%= f.submit "Save"%>
   </div>
 <% end %>
+</div>
