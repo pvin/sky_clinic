@@ -4,10 +4,16 @@ Rails.application.routes.draw do
   get 'home/home_page' => 'home#home_page'
   post 'home/search' => 'home#search'
   get 'home/todays_list' => 'home#todays_list'
-  resources :patients
+
+
+  resources :patients do
+    member do
+      post 'create_pdf'
+    end
+  end
 
   devise_for :users
-  get "*path" => redirect("/")
+  #get "*path" => redirect("/")
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

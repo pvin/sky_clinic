@@ -50,6 +50,7 @@
         <td><%= patient.fees %></td>
         <td><%= patient.previous_sno_reference %></td>
         <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'PDF', create_pdf_patient_path(patient), method: 'post'  %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

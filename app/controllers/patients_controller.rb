@@ -36,12 +36,36 @@ class PatientsController < ApplicationController
     respond_with(@patient)
   end
 
+  def create_pdf
+    @patient = Patient.find(params[:id])
+    pdf = Prawn::Document.new
+
+    pdf.fill_color "0066FF"
+    pdf.font_size 22
+    pdf.text_box "Sky Speech & Hearing Care Report", :align => :right
+    pdf.move_down 40
+    pdf.font_size 18
+    pdf.text ("Below generated report for  #{@patient['patient_name']}")
+    pdf.move_down 20
+    pdf.font_size 14
+    item = ["Patient Name : #{@patient['patient_name']}", "Admission Date : #{@patient['admission_date']}",
+            "Address : #{@patient['patient_address']}", "Phone Number : #{@patient['patien_mobile_no']}",
+            "Patient Email : #{@patient['patien_email']}", "Report : #{@patient['report']}",
+            "Appointment Type : #{@patient['appointment_type']}"]
+    item.each { |i| pdf.text "#{i}"
+    pdf.move_down 10 }
+    send_data pdf.render, type: "application/pdf", disposition: "inline"
+  end
+
   private
     def set_patient
       @patient = Patient.find(params[:id])
     end
 
     def patient_params
-      params.require(:patient).permit(:sno, :admission_date, :patient_name, :patient_address, :patien_mobile_no, :patien_email, :trigger_date, :report, :attachment, :attachment1, :referal_doctor, :appointment_type, :fees, :previous_sno_reference)
+      params.require(:patient).permit(:sno, :admission_date, :patient_name, :patient_address, :patien_mobile_no, :patien_email,
+                                      :trigger_date, :report, :attachment, :attachment1, :referal_doctor, :appointment_type,
+                                      :fees, :previous_sno_reference)
     end
+
 end
