@@ -1,4 +1,4 @@
-<h1>Listing patients</h1>
+<h1>Listing patients Details</h1>
 
 <table class="table table-striped">
   <thead>
@@ -17,6 +17,8 @@
       <th>Appointment type</th>
       <th>Fees</th>
       <th>Previous sno reference</th>
+      <th>Accessories List</th>
+      <th>Accessories Price </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -39,7 +41,7 @@
             <td> - </td>
         <%end%>
 
-        <% if patient.attachment.present? %>
+        <% if patient.attachment1.present? %>
             <td><%= link_to "Download File", patient.attachment1_url %></td>
         <%else%>
             <td> - </td>
@@ -49,10 +51,12 @@
         <td><%= patient.appointment_type %></td>
         <td><%= patient.fees %></td>
         <td><%= patient.previous_sno_reference %></td>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'PDF', create_pdf_patient_path(patient), method: 'post'  %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= patient.accessories_list %></td>
+        <td><%= patient.accessories_price %></td>
+        <td><%= link_to 'Show', patient,class: "btn btn-info"  %></td>
+        <td><%= link_to 'PDF', create_pdf_patient_path(patient), method: 'post',class: "btn btn-primary"  %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient),class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -60,6 +64,6 @@
 
 <br>
 
-<%= will_paginate @patients %><br>
+<div class="btn btn-primary"><%= will_paginate @patients %></div> <br> <br>
 
-<%= link_to 'New Patient', new_patient_path %>
+<%= link_to 'New Patient', new_patient_path, class: "btn btn-info" %>

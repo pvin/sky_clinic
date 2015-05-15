@@ -65,7 +65,7 @@ class PatientsController < ApplicationController
     def patient_params
       params.require(:patient).permit(:sno, :admission_date, :patient_name, :patient_address, :patien_mobile_no, :patien_email,
                                       :trigger_date, :report, :attachment, :attachment1, :referal_doctor, :appointment_type,
-                                      :fees, :previous_sno_reference)
+                                      :fees, :previous_sno_reference, :accessories_list,:accessories_price)
     end
 
 end

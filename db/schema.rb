@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514100930) do
+ActiveRecord::Schema.define(version: 20150515131329) do
 
   create_table "patients", force: true do |t|
     t.date     "admission_date"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20150514100930) do
     t.datetime "updated_at"
     t.string   "attachment"
     t.string   "attachment1"
+    t.text     "accessories_list"
+    t.decimal  "accessories_price",      precision: 30, scale: 10
   end
 
   create_table "users", force: true do |t|
