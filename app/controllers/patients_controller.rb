@@ -57,6 +57,29 @@ class PatientsController < ApplicationController
     send_data pdf.render, type: "application/pdf", disposition: "inline"
   end
 
+  def collection
+  end
+
+  def daily_collection
+    @total = Patient.daily_collection_scope.summation
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def monthly_collection
+    @total = Patient.monthly_collection_scope.summation
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def yearly_collection
+    @total = Patient.monthly_collection_scope.summation
+    respond_to do |format|
+      format.js
+    end
+  end
 
 
   private

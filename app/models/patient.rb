@@ -14,8 +14,16 @@ class Patient < ActiveRecord::Base
     text :patient_name,:default_boost => 2
   end
 
+  scope :daily_collection_scope, -> { where('DATE(created_at) = ?', Date.today)}
+  scope :monthly_collection_scope, -> { where('MONTH(created_at) = ?', Date.today.month)}
+  scope :yearly_collection_scope, -> { where('YEAR(created_at) = ?', Date.today.year)}
 
+  def self.summation
+     sum(:fees)
+  end
 
 end
 
+
+#User.active.collect_column(:id, :conditions => { :updated_at => Date.today })
 

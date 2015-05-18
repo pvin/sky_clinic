@@ -22,8 +22,8 @@
     <ul class="nav navbar-nav">
       <li> <%= link_to 'Home', root_path%></li>
       <li> <%= link_to 'Data Store', patients_path%></li>
-      <li> <%= link_to 'Today List', 'home/todays_list'%></li>
-      <li> <%= link_to 'Collections', 'home/collection'%></li>
+      <li> <%= link_to 'Today List', '/home/todays_list'%></li>
+      <li> <%= link_to 'Collections', '/patients/collection'%></li>
     </ul>
     <%if current_page?(root_path)%>
     <div class="col-sm-3 col-md-3 pull-right">

@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'home#home_page'
-  get 'home/home_page' => 'home#home_page'
-  post 'home/search' => 'home#search'
-  get  'home/todays_list' => 'home#todays_list'
-  get 'home/collection' => 'home#collection'
-  get 'home/daily_collection' => 'home#daily_collection'
-  get 'home/monthly_collection' => 'home#monthly_collection'
-  get 'home/yearly_collection' => 'home#yearly_collection'
+
+  get   'home/home_page' => 'home#home_page'
+  post  'home/search' => 'home#search'
+  get   'home/todays_list' => 'home#todays_list'
+  get   'patients/collection' => 'patients#collection'
+  get   'patients/daily_collection' => 'patients#daily_collection'
+  get   'patients/monthly_collection' => 'patients#monthly_collection'
+  get   'patients/yearly_collection' => 'patients#yearly_collection'
 
   resources :patients do
     member do
@@ -15,8 +15,9 @@ Rails.application.routes.draw do
     end
   end
 
+  root  'home#home_page'
   devise_for :users
-  #get "*path" => redirect("/")
+  get "*path" => redirect("/")
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
