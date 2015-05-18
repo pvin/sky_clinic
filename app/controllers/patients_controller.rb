@@ -57,6 +57,8 @@ class PatientsController < ApplicationController
     send_data pdf.render, type: "application/pdf", disposition: "inline"
   end
 
+
+
   private
     def set_patient
       @patient = Patient.find(params[:id])

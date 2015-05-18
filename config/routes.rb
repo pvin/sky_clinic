@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root 'home#home_page'
   get 'home/home_page' => 'home#home_page'
   post 'home/search' => 'home#search'
-  get 'home/todays_list' => 'home#todays_list'
-
+  get  'home/todays_list' => 'home#todays_list'
+  get 'home/collection' => 'home#collection'
+  get 'home/daily_collection' => 'home#daily_collection'
+  get 'home/monthly_collection' => 'home#monthly_collection'
+  get 'home/yearly_collection' => 'home#yearly_collection'
 
   resources :patients do
     member do
