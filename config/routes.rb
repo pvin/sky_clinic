@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :events
+
   get   'home/home_page' => 'home#home_page'
   post  'home/search' => 'home#search'
   get   'home/todays_list' => 'home#todays_list'
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root  'home#home_page'
+  root  'events#index'
   devise_for :users
   get "*path" => redirect("/")
   # The priority is based upon order of creation: first created -> highest priority.
