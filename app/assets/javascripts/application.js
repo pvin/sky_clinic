@@ -14,12 +14,12 @@
 //= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
-
+//= require turbolinks
 //= require fullcalendar
 //= require_tree .
 
 
-$(document).ready(function() {
+$(document).on('ready page:load',function() {
 
     // page is now ready, initialize the calendar...
 
