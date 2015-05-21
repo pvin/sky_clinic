@@ -62,23 +62,35 @@ class PatientsController < ApplicationController
   end
 
   def daily_collection
-    @total = Patient.daily_collection_scope.summation
-    respond_to do |format|
-      format.js
+    if current_user.id == 1
+      @total = Patient.daily_collection_scope.summation
+      respond_to do |format|
+        format.js
+      end
+    else
+      @total = 0
     end
   end
 
   def monthly_collection
-    @total = Patient.monthly_collection_scope.summation
-    respond_to do |format|
-      format.js
+    if current_user.id == 1
+      @total = Patient.monthly_collection_scope.summation
+      respond_to do |format|
+        format.js
+      end
+    else
+      @total = 0
     end
   end
 
   def yearly_collection
-    @total = Patient.monthly_collection_scope.summation
-    respond_to do |format|
-      format.js
+    if current_user.id == 1
+      @total = Patient.monthly_collection_scope.summation
+      respond_to do |format|
+        format.js
+      end
+    else
+      @total = 0
     end
   end
 
