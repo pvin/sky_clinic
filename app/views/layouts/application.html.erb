@@ -18,17 +18,20 @@
     </button>
     <div class="navbar-brand"><%= link_to 'SKY SPEECH & HEARING CARE', root_path%></div>
   </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+  <% if user_signed_in? %>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li> <%= link_to 'Home', root_path%></li>
       <li> <%= link_to 'Data Store', patients_path%></li>
       <li> <%= link_to 'Today List', '/home/todays_list'%></li>
       <li> <%= link_to 'Collections', '/patients/collection'%></li>
     </ul>
+
     <%if current_page?(root_path)%>
     <div class="col-sm-3 col-md-3 pull-right">
-      <form name="form" class="navbar-form" role="search"  method="post" action="home/search">
-        <div class="input-group">
+      <form name="form" class="navbar-form"  role="search"  method="post" action="home/search">
+        <div class="input-group" >
           <input type="text" class="form-control" placeholder="Search" name="search_str">
           <div class="input-group-btn">
             <button class="btn btn-default" style="margin-top:9px" type="submit"><i class="glyphicon glyphicon-search"></i></button>
@@ -38,14 +41,29 @@
     </div>
     <%end%>
   </div>
+  <%end%>
+
+  <div  style="float: right; padding-right: 50px">
+    <% if user_signed_in? %>
+          <p class="log_out"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></p>
+    <%end%>
+  </div>
+
+  <div style="float: right; padding-top: 15px; padding-right: 50px" >
+    <% if !user_signed_in? %>
+      <p class="sign_in"><%= link_to "Login", new_user_session_path %></p>
+    <% end %>
+  </div>
+
 </nav>
 
-<%flash.each do |name, msg|%>
-    <div id="page_wrapper">
-      <%= content_tag(:div,msg, class: "alert" ) %>
-    </div>
-<%end%>
+
 <div class="container" style="padding-top:20px;">
+  <%flash.each do |name, msg|%>
+      <div id="page_wrapper">
+        <%= content_tag(:div,msg, class: "alert" ) %>
+      </div>
+  <%end%>
 <%= yield %>
 </div>
 
