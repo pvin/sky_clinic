@@ -1,7 +1,17 @@
 <h1>Welcome To SKY Speech & Hearing Data Center</h1>
-<h3>Listing events</h3>
+<br>
 
-<table>
+<blockquote>
+<h3>Listing events</h3>
+</blockquote>
+
+<br>
+
+<div class="row-fluid">
+  <div id="calendar", class="col-md-6">
+  </div>
+  <div class="col-md-6">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Title</th>
@@ -31,4 +41,7 @@
 
 <%= link_to 'New Event', new_event_path %>
 
-<div id="calendar"></div>
+ </div>
+</div>
+
+<div><%= will_paginate @events %></div>

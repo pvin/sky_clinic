@@ -4,7 +4,8 @@ class EventsController < ApplicationController
   respond_to :html
 
   def index
-    @events = Event.all
+    @events = Event.order_by_latest_scope
+    @events = @events.paginate(:page => params[:page], :per_page => 3)
     #respond_with(@events)
   end
 

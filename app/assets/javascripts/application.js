@@ -14,7 +14,7 @@
 //= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require fullcalendar
 //= require_tree .
 
