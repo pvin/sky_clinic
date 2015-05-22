@@ -18,6 +18,8 @@ class Patient < ActiveRecord::Base
   scope :monthly_collection_scope, -> { where('MONTH(created_at) = ?', Date.today.month)}
   scope :yearly_collection_scope, -> { where('YEAR(created_at) = ?', Date.today.year)}
 
+  scope :email_list_scope, -> { where("DAY(trigger_date) = ? AND MONTH(trigger_date) = ?", 2.days.from_now.day, 2.days.from_now.month) }
+
   def self.summation
      sum(:fees)
   end

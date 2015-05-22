@@ -94,6 +94,13 @@ class PatientsController < ApplicationController
     end
   end
 
+  def trigger_action_mailer
+    @email_list = Patient.email_list_scope
+    if !@email_list.empty?
+      @email_list.each do |patient_obj| PatientMailer.trigger_email(patient_obj,'SKY Speech & Hearing').deliver!
+      end
+    end
+  end
 
   private
     def set_patient
