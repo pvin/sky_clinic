@@ -102,6 +102,10 @@ class PatientsController < ApplicationController
     end
   end
 
+  def todays_list
+    @email_list = Patient.email_list_scope
+  end
+
   private
     def set_patient
       @patient = Patient.find(params[:id])

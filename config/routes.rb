@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get   'home/home_page' => 'home#home_page'
   post  'home/search' => 'home#search'
-  get   'home/todays_list' => 'home#todays_list'
+  get   'patients/todays_list' => 'patients#todays_list'
   get   'patients/collection' => 'patients#collection'
   get   'patients/daily_collection' => 'patients#daily_collection'
   get   'patients/monthly_collection' => 'patients#monthly_collection'

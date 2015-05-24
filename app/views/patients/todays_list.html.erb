@@ -1,0 +1,34 @@
+<h1>Today List</h1>
+
+<% if !@email_list.nil?%>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Sno</th>
+    <th>Admission Date</th>
+    <th>Patient Name</th>
+    <th>Patient Address</th>
+    <th>Patient Mobile no</th>
+    <th>appointment_type</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @email_list.each do |patient| %>
+      <tr>
+        <td><%= patient.id %></td>
+        <td><%= patient.admission_date %></td>
+        <td><%= patient.patient_name %></td>
+        <td><%= patient.patient_address %></td>
+        <td><%= patient.patien_mobile_no %></td>
+        <td><%= patient.appointment_type %></td>
+        <td><%= link_to 'Show', patient,class: "btn btn-info"  %></td>
+        <td><%= link_to 'PDF', create_pdf_patient_path(patient), method: 'post',class: "btn btn-primary"  %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient),class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%end%>

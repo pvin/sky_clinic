@@ -9,7 +9,5 @@ class HomeController < ApplicationController
     end
   end
 
-  def todays_list
 
-  end
 end
